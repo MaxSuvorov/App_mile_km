@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Maxim App</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+	<h1>Ты вновь забыл, как переводить мили в км :( Партия не гордится тобой, возвращай миска рис!</h1>
+	<div class="form-group col-md-3">
+		<label for="usr">Мили:</label>
+		<input type="text" class="form-control" id="celcius" onkeyup="celciusToFahrenheit()">
+	</div>
+
+	<div class="form-group col-md-3">
+		<label for="pwd">Километры:</label>
+		<input type="text" class="form-control" id="fahrenheit" onkeyup="fahrenheitToCelcius()">
+	</div>
+
+	<script>
+		require('./render.js');
+
+		function celciusToFahrenheit(){
+			let celcius = document.getElementById('celcius').value;
+			let fahrenheit = (celcius* 1.609);
+			document.getElementById('fahrenheit').value = fahrenheit;
+		}
+
+		function fahrenheitToCelcius(){
+			let fahrenheit = document.getElementById('fahrenheit').value;
+			let celcius = (fahrenheit/1.609)
+			document.getElementById('celcius').value = celcius;
+		}
+	</script>
+</body>
+</html>
